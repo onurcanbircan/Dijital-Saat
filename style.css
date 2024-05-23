@@ -1,0 +1,46 @@
+body
+{
+    background-color: #424242; /* Arka plan rengini koyu gri yapar. */
+    color: #fff; /* Metin rengini beyaz yapar. */
+}
+
+#clock
+{
+    text-align: center; /* Saat bloğunun içindeki metni ortalar. */
+    width: 50%; /* Saat bloğunun genişliğini sayfanın yarısı yapar. */
+    position: absolute; /* Saat bloğunu sayfada mutlak bir konuma yerleştirir. */
+    top: 30%; /* Üstten itibaren saat bloğunun konumunu belirler. */
+    left: 30%; /* Soldan itibaren saat bloğunun konumunu belirler. */
+}
+
+#clock h2
+{
+    font-family: 'Bebas Neue',cursive; /* Başlık için özel bir font kullanır. */
+    font-size: 50px; /* Başlık font boyutunu belirler. */
+}
+
+.clock-container
+{
+    display: flex; /* Saat, dakika ve saniye bloklarını yan yana dizmek için flexbox kullanır. */
+    flex-direction: row; /* Öğeleri yatay bir sıra halinde dizmek için belirler. */
+    justify-content: normal; /* Öğeler arası boşluğu eşit dağıtmak için kullanılır. */
+    align-items: center; /* Öğeleri dikey olarak ortalar. */
+    align-content: center; /* Çok satırlı flex konteynerlerde öğeleri dikey olarak ortalar. */
+}
+
+.clock-items
+{
+    width: 32%; /* Her saat, dakika ve saniye bloğunun genişliğini belirler. */
+    background-color: #fff; /* Arka plan rengini beyaz yapar. */
+    color: #000; /* Metin rengini siyah yapar. */
+    border-radius: 10px; /* Köşeleri yuvarlak yapar. */
+    margin-right: 3%; /* Sağdaki bloklardan boşluk bırakır. */
+    font-family: 'Orbitron',sans-serif; /* Sayılar için özel bir font kullanır. */
+    font-size: 60px; /* Sayıların font boyutunu belirler. */
+}
+
+#date
+{
+    font-family: 'Bebas Neue',cursive; /* Tarih için özel bir font kullanır. */
+    font-size: 30px; /* Tarih font boyutunu belirler. */
+}
