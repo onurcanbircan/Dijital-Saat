@@ -1,28 +1,42 @@
-function GetTime() // GetTime adında bir fonksiyon tanımlar.
-{
-    var now = new Date(); // Şu anki tarihi ve saati içeren bir Date objesi oluşturur.
-    var hour = now.getHours(); // Saat bilgisini alır.
-    var minute = now.getMinutes(); // Dakika bilgisini alır.
-    var second = now.getSeconds(); // Saniye bilgisini alır.
+// Theme Toggle
+const themeBtn = document.getElementById('themeBtn');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  themeBtn.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+});
 
-    var day = now.getDate(); // Gün bilgisini alır.
-    var month = now.getMonth()+1; // Ay bilgisini alır. JavaScript'te aylar 0'dan başladığı için 1 ekleriz.
-    var year = now.getFullYear(); // Yıl bilgisini alır.
+// Flip Clock Function
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
 
-    // Saat, dakika ve saniye değerleri eğer 10'dan küçükse başlarına '0' ekler.
-    (hour < 10) ? document.getElementById("hour").innerText = "0" + hour:
-               document.getElementById("hour").innerText = hour;
+  flipTo('hour', h);
+  flipTo('minute', m);
+  flipTo('second', s);
 
-    (minute < 10) ? document.getElementById("minute").innerText = "0" + minute:
-                 document.getElementById("minute").innerText = minute;
-
-    (second < 10) ? document.getElementById("second").innerText = "0" + second:
-                 document.getElementById("second").innerText = second;
-
-    // Tarih bilgisini 'gün / ay / yıl' formatında ekrana yazdırır.
-    document.getElementById("date").innerText = day + " / " + month + " / " + year;
+  // Tarih
+  const day = String(now.getDate()).padStart(2,'0');
+  const month = String(now.getMonth()+1).padStart(2,'0');
+  const year = now.getFullYear();
+  document.getElementById('date').textContent = `${day} / ${month} / ${year}`;
 }
 
-// setInterval fonksiyonu, belirtilen süre (milisaniye cinsinden) sonunda tekrar tekrar bir fonksiyonu çalıştırır.
-// Burada, GetTime fonksiyonunu her 1000 milisaniyede (1 saniye) bir kez çalıştırır.
-setInterval(function(){GetTime();},1000);
+// Flip Function
+function flipTo(id, value) {
+  const card = document.getElementById(id);
+  const top = card.querySelector('.top');
+  const bottom = card.querySelector('.bottom');
+
+  if(top.textContent !== value){
+    bottom.textContent = value;
+    card.classList.remove('flip'); // Animasyonu resetlemek için
+    void card.offsetWidth; // Reflow tetikleyerek animasyonu yeniden başlatır
+    card.classList.add('flip');
+    top.textContent = value;
+  }
+}
+
+setInterval(updateClock, 1000);
+updateClock();
