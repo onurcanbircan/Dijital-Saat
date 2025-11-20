@@ -2,7 +2,8 @@
 
 **Fliqlo Flip Clock**, klasik mekanik flip saat görünümünü modern web teknolojileri ile yeniden tasarlayan bir dijital saat uygulamasıdır. Bu proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiştir ve hem ışık hem de karanlık tema desteği sunar.
 
-## Özellikler �
+## Özellikler <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/0b0ad12f-4f2b-401c-8676-28801ce2ee1e" />
+
 
 - Gerçek zamanlı saat, dakika ve saniye göstergesi
 - Flip animasyonu ile klasik flip saat efekti
