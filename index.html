@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"><!-- Bu satır, belgeye bir stil sayfası bağlar. -->
-
-    <title>Dijital Saat</title> <!-- Bu satır, web sayfasının başlığını tanımlar. -->
-
-    <!-- Aşağıdaki üç satır, farklı fontlar eklemek için Google Fonts servisine bağlanır. -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
-</head>
-<body>
-    <div id="clock"> <!-- Saat bileşenlerini içeren ana konteyner. -->
-
-        <h2>Digital Clock</h2> <!-- Saat başlığı. -->
-
-        <div class="clock-container"> <!-- Saat rakamlarını içeren konteyner. -->
-            
-            <!-- Aşağıdaki üç div, saat, dakika ve saniye değerlerini gösterir. -->
-            <div class="clock-items"><p id="hour">16</p></div>
-            <div class="clock-items"><p id="minute">58</p></div>
-            <div class="clock-items"><p id="second">49</p></div>
-        </div>
-        <div id="date"></div> <!-- Tarih bilgisini gösteren bölüm. -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fliqlo Flip Clock</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="toggle-theme">
+      <button id="themeBtn">🌙 Dark Mode</button>
     </div>
-</body>
-<script src="script.js"></script> <!-- Bu satır, JavaScript dosyasını belgeye bağlar. -->
+
+    <div class="clock-wrapper">
+      <div class="flip-clock">
+        <div class="flip-card" id="hour">
+          <div class="top">00</div>
+          <div class="bottom">00</div>
+        </div>
+        <div class="flip-card" id="minute">
+          <div class="top">00</div>
+          <div class="bottom">00</div>
+        </div>
+        <div class="flip-card" id="second">
+          <div class="top">00</div>
+          <div class="bottom">00</div>
+        </div>
+      </div>
+      <div id="date">01.01.2025</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
